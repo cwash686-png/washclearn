@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Landing | WashGo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: linear-gradient(135deg, #050a1b 0%, #0c172d 100%); }
+    .panel { width: 100%; max-width: 900px; background: rgba(10,18,36,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 28px; padding: 2.5rem; box-shadow: 0 24px 80px rgba(0,0,0,0.4); }
+    .panel h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; }
+    .panel p { color: var(--text-muted); line-height: 1.8; max-width: 720px; }
+    .panel .actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .panel .actions a { flex: 1 1 220px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.2rem; border-radius: 999px; font-weight: 700; background: var(--primary); color: white; transition: background 0.25s ease; }
+    .panel .actions a:hover { background: var(--primary-light); }
+    .panel ul { margin-top: 2rem; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .panel li { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 1rem 1.2rem; }
+    .panel li strong { display: block; margin-bottom: 0.4rem; }
+    @media (max-width: 720px) { .panel ul { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <span class="section-tag" style="color: var(--accent);">Admin</span>
+    <h1>Admin Landing Page</h1>
+    <p>This Admin landing page helps managers and counter staff quickly reach the operations dashboard and create new bookings, manage workers, payments, complaints, and customer records.</p>
+    <div class="actions">
+      <a href="washcleaner/manager.html">Go to Admin Dashboard</a>
+      <a href="roles.html">Back to Role Selector</a>
+    </div>
+    <ul>
+      <li><strong>Booking control</strong> Create and update counter bookings with custom pricing.</li>
+      <li><strong>Customer database</strong> View and manage customer records and active jobs.</li>
+      <li><strong>Worker management</strong> Track worker availability and assignments.</li>
+      <li><strong>Reporting</strong> Generate daily operations and revenue summaries.</li>
+    </ul>
+  </main>
+</body>
+</html>
