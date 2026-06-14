@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Landing | WashGo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: linear-gradient(135deg, #04121f 0%, #081d34 100%); }
+    .panel { width: 100%; max-width: 900px; background: rgba(9,18,34,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 28px; padding: 2.5rem; box-shadow: 0 24px 80px rgba(0,0,0,0.4); }
+    .panel h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; }
+    .panel p { color: var(--text-muted); line-height: 1.8; max-width: 720px; }
+    .panel .actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .panel .actions a { flex: 1 1 220px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 1.2rem; border-radius: 999px; font-weight: 700; background: var(--primary); color: white; transition: background 0.25s ease; }
+    .panel .actions a:hover { background: var(--primary-light); }
+    .panel ul { margin-top: 2rem; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .panel li { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 1rem 1.2rem; }
+    .panel li strong { display: block; margin-bottom: 0.4rem; }
+    @media (max-width: 720px) { .panel ul { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <span class="section-tag" style="color: var(--accent);">Customer</span>
+    <h1>Customer Landing Page</h1>
+    <p>Welcome to WashGo. Book doorstep car and bike wash services, check pricing, read reviews, and explore service packages from the customer-facing landing page.</p>
+    <div class="actions">
+      <a href="index.html">Go to Customer Site</a>
+      <a href="roles.html">Back to Role Selector</a>
+    </div>
+    <ul>
+      <li><strong>Fast booking</strong> Book a service in seconds with pickup and time slot selection.</li>
+      <li><strong>Service overview</strong> Explore wash packages, foam wash, detailing and monthly plans.</li>
+      <li><strong>Trust & reviews</strong> Read customer feedback and satisfaction stats.</li>
+      <li><strong>Help & support</strong> Access customer support details and contact information.</li>
+    </ul>
+  </main>
+</body>
+</html>
