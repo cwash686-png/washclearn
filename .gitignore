@@ -1,0 +1,13 @@
+# Vite cache
+.vite/
+.vite
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Developer push scripts
+push_full_code.ps1
