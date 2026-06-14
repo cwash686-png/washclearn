@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0; url=index.html" />
+  <script>
+    window.location.replace("index.html");
+  </script>
+  <title>WashGo Role Landing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 1rem; background: radial-gradient(circle at top, rgba(37,99,235,0.18), transparent 30%), linear-gradient(180deg, #061022 0%, #091725 100%); }
+    .role-shell { max-width: 1200px; width: 100%; background: rgba(8,16,34,0.96); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 24px 80px rgba(0,0,0,0.45); border-radius: 28px; padding: 2.5rem; }
+    .role-header { text-align: center; margin-bottom: 2rem; }
+    .role-header h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .role-header p { color: var(--text-muted); max-width: 720px; margin: 0 auto; line-height: 1.75; }
+    .roles-grid { display: grid; grid-template-columns: repeat(4, minmax(220px,1fr)); gap: 1.4rem; }
+    .role-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 1.8rem; display: flex; flex-direction: column; gap: 1.25rem; transition: transform 0.25s ease, border-color 0.25s ease; }
+    .role-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.4); }
+    .role-card h2 { margin: 0; font-size: 1.25rem; }
+    .role-card p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+    .role-card .role-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: rgba(37,99,235,0.12); color: var(--primary); font-size: 1.35rem; }
+    .role-card .btn-group { margin-top: auto; }
+    .role-card a { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.9rem 1rem; border-radius: 999px; font-weight: 700; background: var(--primary); color: #fff; transition: background 0.25s ease; }
+    .role-card a:hover { background: var(--primary-light); }
+    .note { margin-top: 1.8rem; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
+    @media (max-width: 992px) { .roles-grid { grid-template-columns: repeat(2, minmax(220px,1fr)); } }
+    @media (max-width: 640px) { body { padding: 2rem 0.5rem; } .roles-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="role-shell">
+    <div class="role-header">
+      <span class="section-tag" style="color: var(--accent);">Role Access</span>
+      <h1>Choose the right WashGo portal</h1>
+      <p>Select your role below to go to the appropriate landing page for Super Admin, Admin, Worker, or Customer.</p>
+    </div>
+
+    <div class="roles-grid">
+      <article class="role-card">
+        <div class="role-icon">👑</div>
+        <h2>Super Admin</h2>
+        <p>Access the executive admin dashboard for business analytics, global settings, customer insights, and company-wide reports.</p>
+        <div class="btn-group"><a href="landing-super-admin.html">Open Super Admin</a></div>
+      </article>
+
+      <article class="role-card">
+        <div class="role-icon">🧑‍💼</div>
+        <h2>Admin</h2>
+        <p>Use the manager/counter dashboard to create bookings, track operations, manage customers, workers, payments, and reports.</p>
+        <div class="btn-group"><a href="landing-admin.html">Open Admin</a></div>
+      </article>
+
+      <article class="role-card">
+        <div class="role-icon">🧽</div>
+        <h2>Worker</h2>
+        <p>Open the worker portal to view active jobs, attendance, earnings, and incoming assignments in real time.</p>
+        <div class="btn-group"><a href="landing-worker.html">Open Worker</a></div>
+      </article>
+
+      <article class="role-card">
+        <div class="role-icon">🚗</div>
+        <h2>Customer</h2>
+        <p>Visit the customer landing page for booking doorstep car and bike wash services, pricing, reviews, and support.</p>
+        <div class="btn-group"><a href="landing-customer.html">Open Customer</a></div>
+      </article>
+    </div>
+
+    <p class="note">If you already have credentials, use the role-specific portal to continue. The customer landing page is also available at <code>index.html</code>.</p>
+  </div>
+</body>
+</html>
