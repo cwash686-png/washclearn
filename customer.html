@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WashGo — Book doorstep car & bike wash at your home. Premium vehicle cleaning service delivered to you. Easy booking, trained professionals, best prices." />
+  <meta name="keywords" content="car wash at home, bike wash doorstep, vehicle cleaning booking, WashGo" />
+  <title>WashGo Customer — Doorstep Car &amp; Bike Wash</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Preconnect for fonts -->
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <script src="config.env.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     LOADING SCREEN
+══════════════════════════════════════ -->
+<div id="loading-screen" role="status" aria-label="Loading WashGo">
+  <div class="loader-logo">WashGo</div>
+  <div class="loader-ring"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <!-- Mobile Menu Toggle -->
+    <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo" aria-label="WashGo Home">
+      <img src="assets/logo.png" alt="WashGo Logo" style="width: 38px; height: 38px; border-radius: 10px; object-fit: cover; box-shadow: 0 4px 12px rgba(37,99,235,0.4);" />
+      <span class="logo-text">Wash<span class="logo-dot">Go</span></span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#my-bookings">My Bookings</a></li>
+      <li><a href="#support">Support & Help</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <select id="language-select" class="lang-select" aria-label="Choose language">
+        <option value="en">EN</option>
+        <option value="hi">हिंदी</option>
+        <option value="kn">ಕನ್ನಡ</option>
+      </select>
+      <button class="btn-theme" id="btn-notify" aria-label="Push notifications" title="Enable Notifications">🔔</button>
+      <button class="btn-theme" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle Theme">🌙</button>
+      <button class="btn-login" id="btn-login-nav" onclick="openLoginModal()" aria-label="Login">Login</button>
+      <a href="booking.html" class="btn-nav-book">Book Now ✨</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">🏠 Home</a>
+  <a href="#services">🧼 Services</a>
+  <a href="#pricing">💰 Pricing</a>
+  <a href="#how-it-works">📋 How It Works</a>
+  <a href="#my-bookings">📂 My Bookings</a>
+  <a href="#testimonials">⭐ Reviews</a>
+  <a href="#booking">✨ Book Now</a>
+  <a href="#support">📧 Support</a>
+  <a href="#footer">📞 Contact</a>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+<!-- ══════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true" style="background-image: url('assets/hero.png'); background-size: cover; background-position: center; opacity: 0.25;"></div>
+
+  <div class="hero-inner container">
+    <!-- Left Content -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        Customer Portal • ⚡ #1 Doorstep Wash Service
+      </div>
+
+      <h1 class="hero-title">
+        <span class="highlight">Doorstep</span> Car &amp;<br/>
+        Bike Wash at<br/>
+        <span class="accent">Your Home</span>
+      </h1>
+
+      <p class="hero-desc">
+        Skip the queue! Book a professional vehicle wash in 30 seconds.
+        Trained specialists arrive at your doorstep — sparkling clean, guaranteed.
+      </p>
+
+      <div class="hero-cta">
+        <a href="booking.html" class="btn-primary" id="hero-book-btn">
+          🚀 Book Now — It's Easy
+        </a>
+        <a href="services.html" class="btn-secondary" id="hero-services-btn">
+          🔍 View Services
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num" data-count="12000" data-suffix="+" id="stat-washes">0+</span>
+          <span class="label">Washes Done</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num" data-count="98" data-suffix="%" id="stat-happy">0%</span>
+          <span class="label">Happy Customers</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num" data-count="25" data-suffix="+" id="stat-cities">0+</span>
+          <span class="label">Cities Served</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Visual (hidden on mobile) -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="float-tag float-tag-1">
+        <span class="tag-icon">⚡</span> Arrives in 45 mins
+      </div>
+      <div class="float-tag float-tag-2">
+        <span class="tag-icon">🌟</span> 4.9 ★ Rated
+      </div>
+
+      <div class="hero-card-float">
+        <div class="wash-icon-grid">
+          <div class="wash-icon-item">
+            <img src="assets/bike.png" alt="Bike Wash" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Bike Wash</span>
+          </div>
+          <div class="wash-icon-item">
+            <img src="assets/car.png" alt="Car Wash" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Car Wash</span>
+          </div>
+          <div class="wash-icon-item">
+            <img src="assets/foam.png" alt="Foam Wash" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Foam Wash</span>
+          </div>
+          <div class="wash-icon-item">
+            <img src="assets/interior.png" alt="Interior" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Interior</span>
+          </div>
+          <div class="wash-icon-item">
+            <img src="assets/detailing.png" alt="Detailing" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Detailing</span>
+          </div>
+          <div class="wash-icon-item">
+            <img src="assets/monthly.png" alt="Monthly" style="width: 24px; height: 24px; object-fit: contain; margin-bottom: 4px;" />
+            <span class="wi-label">Monthly</span>
+          </div>
+        </div>
+
+        <div class="hero-booking-preview">
+          <p class="hbp-title">Live Booking</p>
+          <div class="hbp-row">
+            <div class="hbp-icon">🧼</div>
+            <span class="hbp-text">Premium Foam Wash</span>
+            <span class="hbp-badge">Active</span>
+          </div>
+          <div class="hbp-row">
+            <div class="hbp-icon">📍</div>
+            <span class="hbp-text">Sector 21, Noida</span>
+          </div>
+          <div class="hbp-row">
+            <div class="hbp-icon">⏰</div>
+            <span class="hbp-text">Today, 10:00 AM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     COUNTERS
+══════════════════════════════════════ -->
+<section id="counters" aria-label="Statistics">
+  <div class="container">
+    <div class="counters-grid">
+      <div class="counter-item reveal">
+        <span class="counter-num" data-count="12000" data-suffix="+">0+</span>
+        <span class="counter-label">Vehicles Washed</span>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter-num" data-count="4500" data-suffix="+">0+</span>
+        <span class="counter-label">Happy Customers</span>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter-num" data-count="25" data-suffix="+">0+</span>
+        <span class="counter-label">Cities Covered</span>
+      </div>
+      <div class="counter-item reveal">
+        <span class="counter-num" data-count="99" data-suffix="%">0%</span>
+        <span class="counter-label">Satisfaction Rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES SECTION
+══════════════════════════════════════ -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Services</span>
+      <h2 class="section-title" id="services-heading">Everything Your Vehicle Needs</h2>
+      <p class="section-subtitle">From a quick rinse to a full detail — we've got a service for every vehicle and budget.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Bike Wash -->
+      <article class="service-card reveal" data-service="bike-basic" aria-label="Bike Wash Service">
+        <div class="card-icon-wrap blue" style="background:transparent; padding:0;"><img src="assets/bike.png" alt="Bike Wash" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <h3 class="card-title">Bike Wash</h3>
+        <p class="card-desc">Complete exterior wash for all two-wheelers. Removes dust, mud and grime. Engine bay wipe included.</p>
+        <div class="card-footer">
+          <span class="card-price">₹149 <span>/ wash</span></span>
+          <button class="btn-book-card" aria-label="Book Bike Wash">Book Now</button>
+        </div>
+      </article>
+
+      <!-- Car Wash -->
+      <article class="service-card popular reveal" data-service="car-basic" aria-label="Car Wash Service">
+        <div class="card-icon-wrap cyan" style="background:transparent; padding:0;"><img src="assets/car.png" alt="Car Wash" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <h3 class="card-title">Car Wash</h3>
+        <p class="card-desc">Thorough exterior car wash with microfiber towels. Tyre dressing, window cleaning &amp; mirror wipe.</p>
+        <div class="card-footer">
+          <span class="card-price">₹249 <span>/ wash</span></span>
+          <button class="btn-book-card" aria-label="Book Car Wash">Book Now</button>
+        </div>
+      </article>
+
+      <!-- Premium Foam Wash -->
+      <article class="service-card reveal" data-service="foam-wash" aria-label="Premium Foam Wash Service">
+        <div class="card-icon-wrap amber" style="background:transparent; padding:0;"><img src="assets/foam.png" alt="Foam Wash" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <h3 class="card-title">Premium Foam Wash</h3>
+        <p class="card-desc">High-pressure foam cannon treatment with pH-neutral shampoo. Paint-safe deep clean with gloss finish.</p>
+        <div class="card-footer">
+          <span class="card-price">₹399 <span>/ wash</span></span>
+          <button class="btn-book-card" aria-label="Book Premium Foam Wash">Book Now</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PRICING PLANS
+══════════════════════════════════════ -->
+<section id="pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Pricing</span>
+      <h2 class="section-title" id="pricing-heading">Simple, Transparent Pricing</h2>
+      <p class="section-subtitle">Choose a monthly plan that fits your lifestyle. No hidden charges.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Bike Plan -->
+      <div class="pricing-card reveal">
+        <span class="plan-icon">🏍️</span>
+        <h3 class="plan-name">Bike Plan</h3>
+        <p class="plan-desc">Perfect for two-wheeler owners</p>
+        <div class="plan-price">
+          <span class="amount">₹399</span>
+          <span class="per">&nbsp;/ month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> 8 Bike Washes / month</li>
+          <li><span class="check">✓</span> Engine bay wipe</li>
+          <li><span class="check">✓</span> Tyre polish</li>
+          <li><span class="check">✓</span> Priority booking</li>
+          <li><span class="cross">✗</span> Interior cleaning</li>
+          <li><span class="cross">✗</span> Foam wash</li>
+        </ul>
+        <button class="btn-plan outline" onclick="selectPlan('bike')" id="select-bike-plan">Get Bike Plan</button>
+      </div>
+
+      <!-- Car Plan (Featured) -->
+      <div class="pricing-card featured reveal">
+        <span class="plan-icon">🚗</span>
+        <h3 class="plan-name">Car Plan</h3>
+        <p class="plan-desc">Our most popular plan</p>
+        <div class="plan-price">
+          <span class="amount">₹799</span>
+          <span class="per">&nbsp;/ month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> 10 Car Washes / month</li>
+          <li><span class="check">✓</span> Foam wash included</li>
+          <li><span class="check">✓</span> Tyre dressing</li>
+          <li><span class="check">✓</span> Window &amp; mirror clean</li>
+          <li><span class="check">✓</span> Priority support</li>
+          <li><span class="cross">✗</span> Full detailing</li>
+        </ul>
+        <button class="btn-plan solid" onclick="selectPlan('car')" id="select-car-plan">Get Car Plan</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card reveal">
+        <span class="plan-icon">✨</span>
+        <h3 class="plan-name">Premium Plan</h3>
+        <p class="plan-desc">Complete vehicle care package</p>
+        <div class="plan-price">
+          <span class="amount">₹1499</span>
+          <span class="per">&nbsp;/ month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span> Unlimited Washes</li>
+          <li><span class="check">✓</span> Full interior cleaning</li>
+          <li><span class="check">✓</span> 1 detailing/month</span></li>
+          <li><span class="check">✓</span> Engine bay cleaning</li>
+          <li><span class="check">✓</span> Free add-ons</li>
+          <li><span class="check">✓</span> Dedicated specialist</li>
+        </ul>
+        <button class="btn-plan outline" onclick="selectPlan('premium')" id="select-premium-plan">Get Premium Plan</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════ -->
+<section id="how-it-works" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Process</span>
+      <h2 class="section-title" id="how-heading">How WashGo Works</h2>
+      <p class="section-subtitle">Get a spotless vehicle in 4 simple steps. No hassle, no waiting.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="how-step reveal">
+        <div class="how-num">1</div>
+        <h3 class="how-title">Choose Service</h3>
+        <p class="how-desc">Pick your vehicle type and the wash service that suits your needs and budget.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">2</div>
+        <h3 class="how-title">Book a Slot</h3>
+        <p class="how-desc">Select your preferred date and time slot. We're available 7 AM – 6 PM every day.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">3</div>
+        <h3 class="how-title">We Come to You</h3>
+        <p class="how-desc">A trained WashGo professional arrives at your doorstep with all equipment.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">4</div>
+        <h3 class="how-title">Enjoy &amp; Rate</h3>
+        <p class="how-desc">Relax while we wash! Pay after the service and share your feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ══════════════════════════════════════
+     BOOKING SECTION
+══════════════════════════════════════ -->
+<section id="booking" aria-labelledby="booking-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Book Now</span>
+      <h2 class="section-title" id="booking-heading">Schedule Your Doorstep Wash</h2>
+      <p class="section-subtitle">Fill in your details and we'll be at your doorstep on time, every time.</p>
+    </div>
+
+    <div class="booking-wrapper">
+      <!-- Info Panel (hidden on mobile) -->
+      <div class="booking-info reveal-left">
+        <h3>Why choose WashGo?</h3>
+        <p>Professional vehicle care delivered to your home or office — saving you time and money.</p>
+        <div class="info-list">
+          <div class="info-item">
+            <div class="ii-icon">⚡</div>
+            <div class="ii-text">
+              <strong>Fast Booking</strong>
+              <span>Book in under 60 seconds</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-icon">👷</div>
+            <div class="ii-text">
+              <strong>Trained Specialists</strong>
+              <span>Background-verified professionals</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-icon">🛡️</div>
+            <div class="ii-text">
+              <strong>Damage Guarantee</strong>
+              <span>100% safe wash, paint-protected</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-icon">💳</div>
+            <div class="ii-text">
+              <strong>Flexible Payment</strong>
+              <span>Cash, UPI or Card — your choice</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-icon">🔄</div>
+            <div class="ii-text">
+              <strong>Easy Reschedule</strong>
+              <span>Reschedule up to 2 hrs before</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div style="margin-top:32px;">
+          <h4 style="font-size:0.85rem;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Recent Bookings</h4>
+          <div id="booking-history-list"></div>
+        </div>
+      </div>
+
+      <!-- Booking Form Card -->
+      <div class="booking-form-card reveal-right">
+        <h3 class="form-title">📋 Booking Details</h3>
+
+        <form id="booking-form" action="https://formspree.io/f/myklnyrq" data-formspree="https://formspree.io/f/myklnyrq" method="POST" novalidate>
+          <div class="form-grid">
+
+            <!-- Full Name -->
+            <div class="form-group" data-field="full-name">
+              <label for="full-name">Full Name <span class="req">*</span></label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">👤</span>
+                <input type="text" id="full-name" name="full_name" class="form-input" placeholder="Rahul Sharma" autocomplete="name" required />
+              </div>
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group" data-field="phone">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">📞</span>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="9876543210" maxlength="10" autocomplete="tel" required />
+              </div>
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <!-- Vehicle Entry (Cart Builder) -->
+            <div class="vehicle-entry-block full-width">
+              <div class="ve-header">
+                <h4>🚘 Vehicle Details</h4>
+                <p>Add one or more vehicles to your booking.</p>
+              </div>
+              <div class="ve-grid">
+                <!-- Vehicle Type -->
+                <div class="form-group" data-field="vehicle-type">
+                  <label for="vehicle-type">Vehicle Type <span class="req">*</span></label>
+                  <select id="vehicle-type" class="form-input">
+                    <option value="">Select vehicle…</option>
+                    <option value="bike">🏍️ Bike / Scooter</option>
+                    <option value="auto">🛺 Auto Rickshaw</option>
+                    <option value="car-hatch">🚗 Hatchback</option>
+                    <option value="car-sedan">🚙 Sedan</option>
+                    <option value="suv">🚐 SUV / MUV</option>
+                    <option value="truck">🚚 Truck / Van</option>
+                  </select>
+                </div>
+
+                <!-- Quantity -->
+                <div class="form-group" data-field="vehicle-qty">
+                  <label for="vehicle-qty">No. of Vehicles</label>
+                  <div class="qty-stepper">
+                    <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+                    <input type="number" id="vehicle-qty" class="qty-input" value="1" min="1" max="5" readonly />
+                    <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+                    <span class="qty-hint" id="qty-hint">× 1</span>
+                  </div>
+                </div>
+
+                <!-- Service Type (dynamic) -->
+                <div class="form-group" data-field="service-type" style="grid-column: 1 / -1;">
+                  <label for="service-type">Service <span class="req">*</span> <span class="service-label-hint" id="service-vehicle-hint"></span></label>
+                  <select id="service-type" class="form-input" disabled>
+                    <option value="">← Select vehicle first</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Add to Booking Button -->
+              <button type="button" class="btn-add-vehicle" id="btn-add-vehicle">
+                <span style="font-size:1.1rem;margin-right:6px">➕</span> Add to Booking
+              </button>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary-block full-width" id="cart-summary-block" style="display:none;">
+              <h4>🛒 Booking Cart</h4>
+              <div class="cart-items" id="cart-items">
+                <!-- Rendered by JS -->
+              </div>
+              <span class="field-error" id="cart-error" role="alert"></span>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group" data-field="booking-date">
+              <label for="booking-date">Date <span class="req">*</span></label>
+              <input type="date" id="booking-date" name="booking_date" class="form-input" required />
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <!-- Time Slot -->
+            <div class="form-group full-width" data-field="time-slot">
+              <label>Time Slot <span class="req">*</span></label>
+              <div id="time-slots-container" class="time-slots" role="radiogroup" aria-label="Select time slot">
+                <input type="hidden" name="time_slot" id="hidden-time-slot" />
+              </div>
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <!-- Address with Autocomplete -->
+            <div class="form-group full-width" data-field="address" style="position:relative;">
+              <label for="address">Full Address <span class="req">*</span></label>
+              <div class="input-wrap" style="position:relative;">
+                <span class="input-icon" aria-hidden="true">📍</span>
+                <input type="text" id="address" name="address" class="form-input" placeholder="Start typing your address..." autocomplete="off" required />
+                <span id="address-loading" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);display:none;font-size:0.8rem;color:var(--text-muted);">⏳</span>
+              </div>
+              <div id="address-suggestions" class="address-suggestions" style="display:none;"></div>
+              <span class="field-error" role="alert"></span>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="form-group full-width">
+              <label>📍 Location Pin</label>
+              <div class="map-placeholder" id="map-placeholder" onclick="openMap()" role="button" aria-label="Pick location on map" tabindex="0">
+                <span class="map-icon" aria-hidden="true">📍</span>
+                <span class="map-text">Click to detect my location</span>
+                <span class="map-sub">Uses your device GPS — no API key needed</span>
+              </div>
+              <!-- Live map shown after detection -->
+              <div id="map-result" style="display:none; margin-top:12px; border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+                <iframe id="map-iframe" width="100%" height="220" style="border:0; display:block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:var(--bg-card); border-top:1px solid var(--border);">
+                  <span id="map-coords-label" style="font-size:0.8rem; color:var(--text-secondary);"></span>
+                  <button type="button" onclick="openMap()" style="font-size:0.78rem; color:var(--primary); background:none; border:none; cursor:pointer; font-weight:600;">📍 Re-detect</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group full-width">
+              <label>Payment Method</label>
+              <div class="payment-methods" role="radiogroup" aria-label="Select payment method">
+                <div class="pay-option" data-pay="cash" role="radio" aria-checked="true" tabindex="0">
+                  <span class="pay-icon" aria-hidden="true">💵</span>
+                  <span class="pay-label">Cash</span>
+                </div>
+                <div class="pay-option" data-pay="upi" role="radio" aria-checked="false" tabindex="0">
+                  <span class="pay-icon" aria-hidden="true">📱</span>
+                  <span class="pay-label">UPI</span>
+                </div>
+                <div class="pay-option" data-pay="card" role="radio" aria-checked="false" tabindex="0">
+                  <span class="pay-icon" aria-hidden="true">💳</span>
+                  <span class="pay-label">Card</span>
+                </div>
+                <input type="hidden" name="payment_method" id="hidden-payment-method" value="cash" />
+              </div>
+            </div>
+
+            <!-- Coupon Code -->
+            <div class="form-group full-width">
+              <label for="coupon-input">Coupon Code</label>
+              <div class="coupon-row">
+                <input type="text" id="coupon-input" name="coupon_code" class="form-input" placeholder="e.g. WASHGO10, FIRST50" style="text-transform:uppercase;" />
+                <button type="button" id="apply-coupon-btn" class="btn-apply-coupon">Apply</button>
+              </div>
+              <small style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;display:block;">Try: WASHGO10 · FIRST50 · SAVE100 · PREMIUM20</small>
+            </div>
+
+            <!-- Price Estimate -->
+            <div class="form-group full-width">
+              <label>Estimated Price</label>
+              <div class="price-estimate">
+                <div class="pe-row">
+                  <span class="pe-label">Base Price</span>
+                  <span id="price-base">—</span>
+                </div>
+                <div class="pe-row">
+                  <span class="pe-label">GST (18%)</span>
+                  <span id="price-gst">—</span>
+                </div>
+                <div class="pe-row">
+                  <span class="pe-label">Coupon Discount</span>
+                  <span id="price-discount" style="color:var(--success);">₹0</span>
+                </div>
+                <div class="pe-row">
+                  <span class="pe-label">Total Payable</span>
+                  <span id="price-total">—</span>
+                </div>
+              </div>
+              <input type="hidden" name="booking_id" id="hidden-booking-id" />
+              <input type="hidden" name="total_payable" id="hidden-total-payable" />
+              <input type="hidden" name="cart_details" id="hidden-cart-details" />
+            </div>
+
+          </div><!-- /form-grid -->
+
+          <!-- Submit -->
+          <button type="submit" id="confirm-booking-btn" class="btn-confirm">
+            🎉 Confirm Booking
+          </button>
+
+          <!-- WhatsApp alternate -->
+          <button type="button" id="btn-whatsapp" class="btn-whatsapp">
+            💬 Book via WhatsApp
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     LIVE STATUS TRACKER
+══════════════════════════════════════ -->
+<section id="status" aria-labelledby="status-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Live Tracking</span>
+      <h2 class="section-title" id="status-heading">Track Your Booking</h2>
+      <p class="section-subtitle">Real-time status updates from booking to completion.</p>
+    </div>
+
+    <!-- Search bookings -->
+    <div class="status-search reveal">
+      <input type="text" id="search-booking-id" class="form-input" placeholder="Enter Booking ID (e.g. WGABC12345)" style="text-transform:uppercase;" aria-label="Search booking by ID" />
+      <button id="search-booking-btn" class="btn-search-booking">🔍 Track</button>
+    </div>
+
+    <!-- Progress tracker -->
+    <div class="status-tracker reveal">
+      <!-- Progress bar -->
+      <div class="progress-bar-wrap" aria-hidden="true">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Step icons -->
+      <div class="steps-row" id="steps-row" role="list" aria-label="Booking progress steps">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Current Status Card -->
+      <div class="current-status-card">
+        <div class="csc-badge" id="status-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Booked
+        </div>
+        <h3 class="csc-title" id="status-title">📋 Booking Received</h3>
+        <p class="csc-desc" id="status-desc">Your booking has been received and confirmed.</p>
+        <button class="btn-demo-status" id="btn-demo-status" onclick="runDemoStatus()">
+          ▶ Run Demo Animation
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     MY BOOKINGS SECTION
+══════════════════════════════════════ -->
+<section id="my-bookings" aria-labelledby="my-bookings-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">My Bookings</span>
+      <h2 class="section-title" id="my-bookings-heading">Your Booking History</h2>
+      <p class="section-subtitle">View, track and cancel your recent WashGo bookings below.</p>
+    </div>
+
+    <div class="my-bookings-wrapper reveal">
+      <!-- Filter tabs -->
+      <div class="mb-tabs" role="tablist">
+        <button class="mb-tab active" data-filter="all" onclick="filterBookings('all')" id="mb-tab-all">All</button>
+        <button class="mb-tab" data-filter="Booked" onclick="filterBookings('Booked')" id="mb-tab-booked">Active</button>
+        <button class="mb-tab" data-filter="Cancelled" onclick="filterBookings('Cancelled')" id="mb-tab-cancelled">Cancelled</button>
+      </div>
+
+      <!-- Booking cards list -->
+      <div id="my-bookings-list" aria-label="Booking list">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty state -->
+      <div id="my-bookings-empty" class="mb-empty" style="display:none;">
+        <div class="mb-empty-icon">📋</div>
+        <h3>No Bookings Yet</h3>
+        <p>You haven't made any bookings. Book a wash now and it'll appear here!</p>
+        <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})" class="btn-primary" style="display:inline-flex;margin-top:16px; border:none; cursor:pointer; background: var(--primary); color: white; padding: 12px 24px; border-radius: 12px; font-weight: 600;">🚀 Book Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PROFILE & REWARDS
+══════════════════════════════════════ -->
+<section id="profile" aria-labelledby="profile-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Customer Profile</span>
+      <h2 class="section-title" id="profile-heading">Profile, Wallet &amp; Rewards</h2>
+      <p class="section-subtitle">Manage account details, saved vehicles, addresses, and referral benefits.</p>
+    </div>
+    <div class="support-wrapper">
+      <div class="support-info reveal-left">
+        <div class="support-contact-card">
+          <div class="scc-icon">👤</div>
+          <div class="scc-content">
+            <h4>Name &amp; Mobile</h4>
+            <p id="profile-name">Rahul Sharma • +91 98765 43210</p>
+          </div>
+        </div>
+        <div class="support-contact-card">
+          <div class="scc-icon">🚗</div>
+          <div class="scc-content">
+            <h4>Saved Vehicles</h4>
+            <p>Honda City (KA-01-AB-1234), Activa 6G (KA-05-Z-7788)</p>
+          </div>
+        </div>
+        <div class="support-contact-card">
+          <div class="scc-icon">📍</div>
+          <div class="scc-content">
+            <h4>Saved Addresses</h4>
+            <p>Home: HSR Layout, Bengaluru • Office: MG Road, Bengaluru</p>
+          </div>
+        </div>
+      </div>
+      <div class="support-form-card reveal-right">
+        <h3 class="form-title">💰 Wallet &amp; Subscription</h3>
+        <div class="price-estimate" style="margin-bottom:14px;">
+          <div class="pe-row"><span class="pe-label">Wallet Balance</span><span>₹540</span></div>
+          <div class="pe-row"><span class="pe-label">Active Plan</span><span>Premium Monthly</span></div>
+          <div class="pe-row"><span class="pe-label">Next Renewal</span><span>30 Apr 2026</span></div>
+        </div>
+        <div class="price-estimate">
+          <div class="pe-row"><span class="pe-label">Referral Reward</span><span style="color:var(--success);">₹150 Earned</span></div>
+          <div class="pe-row"><span class="pe-label">Code</span><span id="referral-code">WASHGO-RAHUL</span></div>
+        </div>
+        <button type="button" id="copy-referral-btn" class="btn-confirm" style="margin-top:12px;">🎁 Copy Referral Code</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Reviews</span>
+      <h2 class="section-title" id="testimonials-heading">Loved by Customers</h2>
+      <p class="section-subtitle">Over 4,500 happy customers trust WashGo for their vehicles every month.</p>
+    </div>
+
+    <!-- Scrollable track -->
+    <div id="testimonials-track" class="testimonials-track" aria-label="Customer testimonials">
+      <!-- Cards injected by JS -->
+    </div>
+
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SUPPORT & FEEDBACK
+══════════════════════════════════════ -->
+<section id="support" aria-labelledby="support-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Help Center</span>
+      <h2 class="section-title" id="support-heading">Support &amp; Feedback</h2>
+      <p class="section-subtitle">Have a question or want to share your experience? We'd love to hear from you!</p>
+    </div>
+
+    <div class="support-wrapper">
+      <!-- Contact Info Cards -->
+      <div class="support-info reveal-left">
+        <div class="support-contact-card">
+          <div class="scc-icon">📧</div>
+          <div class="scc-content">
+            <h4>Email Us</h4>
+            <p>Our team usually responds within 2 hours.</p>
+            <a href="mailto:support@washgo.in">support@washgo.in</a>
+          </div>
+        </div>
+
+        <div class="support-contact-card">
+          <div class="scc-icon">💬</div>
+          <div class="scc-content">
+            <h4>Live Chat</h4>
+            <p>Available Mon-Sun, 8 AM - 8 PM.</p>
+            <a href="https://wa.me/919999999999" target="_blank">Chat on WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="support-faq-preview">
+          <h4>Common Questions</h4>
+          <div class="faq-mini-item">
+            <strong>How do I cancel?</strong>
+            <p>Go to My Bookings and click Cancel at least 2 hrs before.</p>
+          </div>
+          <div class="faq-mini-item">
+            <strong>What if it rains?</strong>
+            <p>We offer a free re-wash if it rains within 24 hours of service.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="support-form-card reveal-right">
+        <h3 class="form-title">📩 Send a Message</h3>
+        <form id="support-form" data-formspree="https://formspree.io/f/myklnyrq">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="support-name">Your Name</label>
+              <input type="text" id="support-name" name="name" class="form-input" placeholder="Rahul Sharma" required />
+            </div>
+            <div class="form-group">
+              <label for="support-email">Email Address</label>
+              <input type="email" id="support-email" name="email" class="form-input" placeholder="rahul@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="support-phone">Phone Number</label>
+              <input type="tel" id="support-phone" name="phone" class="form-input" placeholder="9876543210" required />
+            </div>
+            <div class="form-group">
+              <label for="support-address">Address</label>
+              <input type="text" id="support-address" name="address" class="form-input" placeholder="Sector 21, Noida" required />
+            </div>
+            <div class="form-group full-width">
+              <label for="support-subject">Subject</label>
+              <select id="support-subject" name="subject" class="form-input" required>
+                <option value="">Select a topic...</option>
+                <option value="Booking Issue">Booking Issue</option>
+                <option value="Payment Query">Payment Query</option>
+                <option value="Service Feedback">Service Feedback</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Partnership">Partnership</option>
+              </select>
+            </div>
+            
+            <!-- Rating System (Visible for Feedback) -->
+            <div class="form-group full-width" id="rating-group" style="display: none;">
+              <label>How would you rate our service?</label>
+              <div class="star-rating" id="star-rating-container">
+                <input type="hidden" name="rating" id="support-rating" value="" />
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+              </div>
+              <span class="rating-text" id="rating-text" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; display: inline-block;">Select a rating</span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="support-message">Message</label>
+              <textarea id="support-message" name="message" class="form-input" rows="4" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-confirm" style="width: 100%; margin-top: 20px;">
+            🚀 Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer id="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <span class="logo-text-footer">WashGo</span>
+        <p>Your car deserves the best. WashGo brings professional vehicle cleaning right to your doorstep — fast, affordable &amp; reliable.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Facebook" title="Facebook">📘</a>
+          <a href="#" class="social-btn" aria-label="Twitter/X" title="Twitter/X">🐦</a>
+          <a href="#" class="social-btn" aria-label="YouTube" title="YouTube">▶️</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <nav class="footer-links" aria-label="Quick links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="booking.html">Book Now</a>
+          <a href="index.html#testimonials">Reviews</a>
+        </nav>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <nav class="footer-links" aria-label="Services links">
+          <a href="booking.html">Bike Wash</a>
+          <a href="booking.html">Car Wash</a>
+          <a href="booking.html">Foam Wash</a>
+          <a href="booking.html">Interior Clean</a>
+          <a href="booking.html">Full Detailing</a>
+          <a href="booking.html">Monthly Plans</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="fc-icon" aria-hidden="true">📞</span>
+          <span>+91 99999 99999</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fc-icon" aria-hidden="true">📧</span>
+          <span>hello@washgo.in</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fc-icon" aria-hidden="true">📍</span>
+          <span>Serving 25+ cities across India</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fc-icon" aria-hidden="true">⏰</span>
+          <span>Mon–Sun, 7:00 AM – 7:00 PM</span>
+        </div>
+      </div>
+
+    </div><!-- /footer-grid -->
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 WashGo. All rights reserved.</p>
+      <div class="made-with">Made with <span>❤️</span> for clean vehicles across India</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     SUCCESS MODAL
+══════════════════════════════════════ -->
+<div id="success-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('success-modal')" aria-label="Close">✕</button>
+
+    <div class="modal-icon" aria-hidden="true">🎉</div>
+    <h2 class="modal-title" id="modal-heading">Booking Confirmed!</h2>
+    <p class="modal-subtitle">Your vehicle wash is scheduled. We'll be there on time!</p>
+
+    <div class="booking-id-box">
+      <div class="bid-label">Booking ID</div>
+      <div class="bid-value" id="modal-booking-id">—</div>
+    </div>
+
+    <div class="booking-summary-mini">
+      <div class="bsm-item">
+        <div class="bsm-label">Customer</div>
+        <div class="bsm-val" id="modal-name">—</div>
+      </div>
+      <div class="bsm-item">
+        <div class="bsm-label">Service</div>
+        <div class="bsm-val" id="modal-service">—</div>
+      </div>
+      <div class="bsm-item">
+        <div class="bsm-label">Date</div>
+        <div class="bsm-val" id="modal-date">—</div>
+      </div>
+      <div class="bsm-item">
+        <div class="bsm-label">Time</div>
+        <div class="bsm-val" id="modal-time">—</div>
+      </div>
+      <div class="bsm-item">
+        <div class="bsm-label">Total</div>
+        <div class="bsm-val" id="modal-total">—</div>
+      </div>
+      <div class="bsm-item">
+        <div class="bsm-label">Payment</div>
+        <div class="bsm-val" id="modal-payment">—</div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-done" onclick="closeModal('success-modal')" id="modal-done-btn">✅ Done — Track My Booking</button>
+      <button class="btn-repeat" onclick="repeatLastBooking()" id="modal-repeat-btn">♻️ Repeat This Booking</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     LOGIN MODAL
+══════════════════════════════════════ -->
+<div id="login-modal" class="modal-overlay login-modal" role="dialog" aria-modal="true" aria-labelledby="login-heading">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('login-modal')" aria-label="Close login">✕</button>
+
+    <div class="modal-icon" aria-hidden="true">🔐</div>
+    <h2 class="modal-title" id="login-heading">Welcome Back!</h2>
+    <p class="modal-subtitle">Sign in to manage your bookings</p>
+
+    <div class="tab-btns" role="tablist">
+      <button class="tab-btn active" data-tab="login" onclick="switchTab('login')" role="tab" aria-selected="true" id="tab-login">Login</button>
+      <button class="tab-btn" data-tab="signup" onclick="switchTab('signup')" role="tab" aria-selected="false" id="tab-signup">Sign Up</button>
+    </div>
+
+    <div data-panel="login" class="tab-panel">
+      <div class="form-group" style="margin-bottom:16px;">
+        <label for="login-phone">Email Address</label>
+        <input type="text" id="login-phone" class="form-input" placeholder="rahul@example.com" />
+      </div>
+      <div class="form-group" style="margin-bottom:24px;">
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" class="form-input" placeholder="••••••••" />
+      </div>
+      <button class="btn-confirm" style="width:100%;" onclick="handleFirebaseLogin()">Login</button>
+    </div>
+
+    <div data-panel="signup" class="tab-panel" style="display:none;">
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" class="form-input" placeholder="Rahul Sharma" />
+      </div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="signup-email">Email Address</label>
+        <input type="email" id="signup-email" class="form-input" placeholder="rahul@example.com" />
+      </div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="signup-phone">Phone Number</label>
+        <input type="tel" id="signup-phone" class="form-input" placeholder="9876543210" />
+      </div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="signup-city">City</label>
+        <select id="signup-city" class="form-input">
+          <option value="">Select your city...</option>
+          <option value="bengaluru">Bengaluru</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="delhi">Delhi NCR</option>
+          <option value="hyderabad">Hyderabad</option>
+          <option value="chennai">Chennai</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="signup-pass">Create Password</label>
+        <input type="password" id="signup-pass" class="form-input" placeholder="••••••••" />
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label for="signup-pass-confirm">Confirm Password</label>
+        <input type="password" id="signup-pass-confirm" class="form-input" placeholder="••••••••" />
+      </div>
+      <button class="btn-confirm" style="width:100%;" onclick="handleFirebaseSignup()">Create Account</button>
+    </div>
+
+    <!-- Google Sign-In Separator & Button -->
+    <div style="text-align: center; margin: 20px 0; position: relative;">
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 0;" />
+      <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--bg-card); padding: 0 12px; font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">or</span>
+    </div>
+    <button class="btn-confirm" style="width:100%; background: var(--bg-card); color: var(--text-primary); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; transition: var(--transition);" onclick="handleGoogleLogin()">
+      <svg width="18" height="18" viewBox="0 0 18 18" style="display: block;">
+        <path fill="#4285F4" d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9v3.47h4.84c-.21 1.12-.84 2.07-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.6z"/>
+        <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.83.86-3.06.86-2.35 0-4.34-1.58-5.05-3.71H.92v2.33C2.4 16.03 5.48 18 9 18z"/>
+        <path fill="#FBBC05" d="M3.95 10.71c-.18-.54-.28-1.11-.28-1.71s.1-1.17.28-1.71V4.96H.92C.33 6.14 0 7.53 0 9s.33 2.86.92 4.04l3.03-2.33z"/>
+        <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.47.8 11.43 0 9 0 5.48 0 2.4 1.97.92 4.96l3.03 2.33c.71-2.13 2.7-3.71 5.05-3.71z"/>
+      </svg>
+      Continue with Google
+    </button>
+  </div>
+</div>
+
+<script type="module">
+  import { auth, db } from './firebase-config.js';
+  import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+  import { doc, setDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+  // Google Sign-In Function
+  window.handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      
+      // Save/Update user info in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        name: user.displayName || 'Google User',
+        email: user.email,
+        phone: user.phoneNumber || '',
+        city: '',
+        createdAt: new Date().toISOString(),
+        lastLogin: new Date().toISOString()
+      }, { merge: true });
+
+      alert(`Welcome ${user.displayName || 'User'}! Logged in with Google.`);
+      closeModal('login-modal');
+      location.reload();
+    } catch (error) {
+      alert("Google Login failed: " + error.message);
+    }
+  };
+
+  // Auth Helper Functions
+  window.handleFirebaseSignup = async () => {
+    const name = document.getElementById('signup-name').value;
+    const email = document.getElementById('signup-email').value;
+    const phone = document.getElementById('signup-phone').value;
+    const city = document.getElementById('signup-city').value;
+    const pass = document.getElementById('signup-pass').value;
+    const passConfirm = document.getElementById('signup-pass-confirm').value;
+
+    if (!name || !email || !pass) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (pass !== passConfirm) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
+      const user = userCredential.user;
+
+      // Save additional user info to Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        name,
+        email,
+        phone,
+        city,
+        createdAt: new Date().toISOString()
+      });
+
+      alert("Account created successfully! Welcome to WashGo.");
+      closeModal('login-modal');
+      location.reload(); // Refresh to update UI
+    } catch (error) {
+      alert("Signup failed: " + error.message);
+    }
+  };
+
+  window.handleFirebaseLogin = async () => {
+    const email = document.getElementById('login-phone').value; // Using email field as placeholder
+    const pass = document.getElementById('login-pass').value;
+
+    if (!email || !pass) {
+      alert("Please enter email and password.");
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+      alert("Logged in successfully!");
+      closeModal('login-modal');
+      location.reload();
+    } catch (error) {
+      alert("Login failed: " + error.message);
+    }
+  };
+
+  // Firebase Firestore Booking Save
+  window.saveBookingToFirebase = async (data) => {
+    try {
+      const bookingsRef = collection(db, "bookings");
+      await addDoc(bookingsRef, {
+        ...data,
+        userId: auth.currentUser ? auth.currentUser.uid : 'guest',
+        timestamp: new Date().toISOString()
+      });
+      console.log("Booking saved to Firebase Firestore");
+    } catch (error) {
+      console.error("Firebase Save Error:", error);
+    }
+  };
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
